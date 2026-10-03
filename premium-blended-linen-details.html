@@ -352,6 +352,153 @@ font-size:22px;
 .back-btn,.inquiry-btn{transition:transform .22s ease,box-shadow .22s ease;}
 .back-btn:hover,.inquiry-btn:hover{transform:scale(1.10);box-shadow:0 8px 18px rgba(0,0,0,.18);}
 
+
+/* KEY ATTRIBUTES - reference style */
+.key-attributes{
+  width:100%;
+  margin-top:22px;
+}
+.key-attributes h3{
+  font-size:28px;
+  font-weight:700;
+  color:#222;
+  margin-bottom:14px;
+}
+.attributes-grid{
+  display:grid;
+  grid-template-columns:1fr 1.45fr 1fr 1.45fr;
+  border-top:1px solid #ddd;
+  border-left:1px solid #ddd;
+  background:#fff;
+}
+.attr-label,
+.attr-value{
+  min-height:48px;
+  padding:14px 16px;
+  border-right:1px solid #ddd;
+  border-bottom:1px solid #ddd;
+  display:flex;
+  align-items:center;
+  font-size:15px;
+  line-height:1.4;
+}
+.attr-label{
+  color:#444;
+  font-weight:400;
+  background:#fafafa;
+}
+.attr-value{
+  color:#222;
+  font-weight:600;
+  background:#fff;
+}
+.lower-grid{
+  margin-top:0;
+}
+@media(max-width:900px){
+  .attributes-grid{
+    grid-template-columns:1fr 1.4fr;
+  }
+  .attributes-grid .attr-label:nth-child(4n+3),
+  .attributes-grid .attr-value:nth-child(4n+4){
+    border-top:1px solid #ddd;
+  }
+}
+@media(max-width:600px){
+  .attributes-grid{
+    grid-template-columns:1fr;
+  }
+  .attr-label{
+    min-height:auto;
+    padding-bottom:7px;
+    border-bottom:0;
+  }
+  .attr-value{
+    padding-top:7px;
+  }
+}
+
+
+/* FINAL PRODUCT SPECIFICATION LAYOUT */
+.key-attributes h3{
+  font-size:28px;
+  font-weight:700;
+  color:#222;
+  margin-bottom:14px;
+}
+.original-product-details{
+  margin-top:32px;
+}
+.original-product-details h2{
+  font-size:34px;
+  color:#0b3d2e;
+  margin-bottom:20px;
+}
+.original-product-details .product-name{
+  font-size:15px;
+  margin-bottom:8px;
+  line-height:1.5;
+}
+
+
+/* KEY ATTRIBUTES ACCORDION */
+.key-attributes{
+  margin-top:22px;
+}
+.key-attributes-toggle{
+  width:100%;
+  border:1px solid #ddd;
+  background:#fff;
+  color:#0b3d2e;
+  padding:16px 20px;
+  font-size:20px;
+  font-weight:700;
+  text-align:left;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  border-radius:8px;
+  box-shadow:0 5px 15px rgba(0,0,0,.06);
+  transition:.25s ease;
+}
+.key-attributes-toggle:hover{
+  background:#f8fbf9;
+}
+.key-attributes-arrow{
+  font-size:20px;
+  transition:transform .25s ease;
+}
+.key-attributes-toggle.active .key-attributes-arrow{
+  transform:rotate(180deg);
+}
+.key-attributes-content{
+  max-height:0;
+  overflow:hidden;
+  opacity:0;
+  transition:max-height .45s ease, opacity .3s ease, margin-top .3s ease;
+}
+.key-attributes-content.open{
+  opacity:1;
+  margin-top:12px;
+}
+
+
+/* BULK INQUIRY ABOVE FABRIC SPECIFICATIONS */
+.bulk-inquiry{
+  background:#fff;
+  padding:18px;
+  margin-top:20px;
+  margin-bottom:14px;
+  border-radius:8px;
+  box-shadow:0 5px 15px rgba(0,0,0,.06);
+}
+.bulk-inquiry p{
+  margin:0;
+  line-height:1.5;
+  font-size:15px;
+}
+
 </style>
 </head>
 
@@ -422,34 +569,99 @@ font-size:22px;
 <!-- RIGHT PRODUCT DETAILS -->
 <div class="right">
 
-<h2>Premium Blended Linen</h2>
-
-<div class="product-name">
-<span class="product-name-green">Premium Quality Blended Linen Fabric</span> 
-</div>
-
-
-<table>
-<tr><th>Items</th><th>Details</th></tr>
-<tr><td>Product</td><td>Premium Blended Linen</td></tr>
-<tr><td>Fabric Type</td><td>Blended Linen Fabric</td></tr>
-<tr><td>Finish</td><td>Premium Finish</td></tr>
-<tr><td>Texture</td><td>Natural Linen Look &amp; Feel</td></tr>
-<tr><td>Application</td><td>Garments, Ethnic Wear &amp; Fashion Apparel</td></tr>
-<tr><td>Availability</td><td>Multiple Colours</td></tr>
-</table>
-
-
-<!-- ADDITIONAL INFORMATION -->
-<div class="extra-details">
-<p><strong>Quality:</strong> Premium blended linen fabric developed for a refined and versatile look.</p>
-<p><strong>Usage:</strong> Suitable for garments, ethnic wear and fashion apparel.</p>
-<p><strong>Colours:</strong> Available in multiple colour options.</p>
-<p><strong>Bulk Inquiry:</strong> Contact Keona Textiles for requirements and quotation.</p>
-</div>
-
 
 <!-- BUTTONS -->
+
+
+
+<div class="bulk-inquiry">
+</div>
+
+
+
+
+
+<!-- ORIGINAL PRODUCT DETAILS TABLE -->
+<div class="original-product-details">
+  <h2>Premium Blended Linen</h2>
+  <div class="product-name">
+    <span class="product-name-green">Premium Quality Blended Linen Fabric</span>
+  </div>
+
+  <table>
+    <tr><th>Items</th><th>Details</th></tr>
+    <tr><td>Product</td><td>Premium Blended Linen</td></tr>
+    <tr><td>Fabric Type</td><td>Blended Linen Fabric</td></tr>
+    <tr><td>Finish</td><td>Premium Finish</td></tr>
+    <tr><td>Texture</td><td>Natural Linen Look &amp; Feel</td></tr>
+    <tr><td>Application</td><td>Garments, Ethnic Wear &amp; Fashion Apparel</td></tr>
+    <tr><td>Availability</td><td>Multiple Colours</td></tr>
+  </table>
+
+  <div class="extra-details">
+    <p><strong>Quality:</strong> Premium blended linen fabric developed for a refined and versatile look.</p>
+    <p><strong>Usage:</strong> Suitable for garments, ethnic wear and fashion apparel.</p>
+    <p><strong>Colours:</strong> Available in multiple colour options.</p>
+    <p><strong>Bulk Inquiry:</strong> Contact Keona Textiles for requirements and quotation.</p>
+  </div>
+</div>
+
+<div class="key-attributes">
+  <button type="button" class="key-attributes-toggle" onclick="toggleKeyAttributes(this)" aria-expanded="false">
+    <span>Fabric Specifications</span>
+    <span class="key-attributes-arrow">▼</span>
+  </button>
+
+  <div class="key-attributes-content" aria-hidden="true">
+    <div class="attributes-grid">
+
+    <div class="attr-label">Width</div>
+    <div class="attr-value">56/57"</div>
+    <div class="attr-label">Weight</div>
+    <div class="attr-value">135 GSM</div>
+
+    <div class="attr-label">Material</div>
+    <div class="attr-value">Polly 80:20 Linene</div>
+    <div class="attr-label">Type</div>
+    <div class="attr-value">MR Polly Linen</div>
+
+    <div class="attr-label">Yarn Count</div>
+    <div class="attr-value">27S*15S</div>
+    <div class="attr-label">Technics</div>
+    <div class="attr-value">Woven</div>
+
+    <div class="attr-label">Style</div>
+    <div class="attr-value">Plain</div>
+    <div class="attr-label">Pattern</div>
+    <div class="attr-value">Plain Dyed</div>
+
+    <div class="attr-label">Use</div>
+    <div class="attr-value">Garment, Home Textile, Industry, Bedding, Curtain, Cusion, Sofa, Dress</div>
+    <div class="attr-label">Supply Type</div>
+    <div class="attr-value">In-Stock Items</div>
+
+    <div class="attr-label">Applicable to the Crowed</div>
+    <div class="attr-value">Women, Men, Girls, Boys, Infant/Baby, None</div>
+    <div class="attr-label">Color</div>
+    <div class="attr-value">Multi Colors for Selection</div>
+
+    <div class="attr-label">Brand Name</div>
+    <div class="attr-value">Keona Textiles</div>
+    <div class="attr-label">Finishing</div>
+    <div class="attr-value">Soft</div>
+
+    <div class="attr-label">MOQ</div>
+    <div class="attr-value">500 MTR</div>
+    <div class="attr-label">Payment</div>
+    <div class="attr-value">T/T</div>
+
+    <div class="attr-label"></div>
+    <div class="attr-value">
+    </div>
+  </div>
+</div>
+</div>
+
 <div class="btn-group">
 
 <a href="Premium Fabrics.html" class="back-btn">
@@ -462,6 +674,8 @@ Send Inquiry
 </a>
 
 </div>
+
+
 
 </div>
 
@@ -579,6 +793,23 @@ function closeAiruxQuote(){
  document.body.style.overflow='';
 }
 document.addEventListener('keydown',function(e){if(e.key==='Escape')closeAiruxQuote();});
+
+function toggleKeyAttributes(button){
+  const content = button.nextElementSibling;
+  const isOpen = button.classList.toggle('active');
+
+  button.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  content.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
+
+  if(isOpen){
+    content.classList.add('open');
+    content.style.maxHeight = content.scrollHeight + 'px';
+  }else{
+    content.style.maxHeight = '0px';
+    content.classList.remove('open');
+  }
+}
+
 </script>
 
 </body>
